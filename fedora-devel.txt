@@ -1,0 +1,23 @@
+#https://guides.rubyonrails.org/getting_started.html
+# we need:
+# ruby --version >= 2.5.0
+# sqlite3 --version >= ?
+# node --version > 8.16.0
+# yarn --version >= 1.22.0
+# rails --version >= 6.0.0
+
+sudo yum install ruby-devel
+sudo yum install sqlite-devel
+sudo yum install nodejs
+
+# It's recommended to install Yarn through npm
+sudo yum install -y npm
+sudo npm install --global yarn
+
+gem install rails
+
+# Install bundle things locally
+bundle config set --local path 'vendor/bundle'
+
+# Start a new project in this folder
+rails new .
