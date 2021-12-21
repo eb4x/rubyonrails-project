@@ -10,11 +10,15 @@ sudo yum install ruby-devel
 sudo yum install sqlite-devel
 sudo yum install nodejs
 
+# We also need g++ to build some gems
+sudo yum install gcc-c++
+
 # It's recommended to install Yarn through npm
 sudo yum install -y npm
 sudo npm install --global yarn
 
-gem install rails
+# Avoid rails 7, as the guide isn't up to date on ujs/turbo javascript.
+gem install rails -v '< 7'
 
 # Install bundle things locally
 bundle config set --local path 'vendor/bundle'
